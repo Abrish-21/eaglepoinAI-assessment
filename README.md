@@ -1,7 +1,5 @@
 # Eaglepoint AI Assessment
 
-**Submitted By:** Abrham Tilksew | [abrhamttaye@gmail.com](mailto:abrhamttaye@gmail.com)
-
 **Repository:** [eaglepointAI-assessment](#)
 
 This repository contains solutions for three technical assessment tasks submitted to Eaglepoint AI.
@@ -53,7 +51,7 @@ This repository contains solutions for three technical assessment tasks submitte
 
 **Language:** Go
 
-**Architecture:** Clean Architecture (simplified for interview purposes)
+**Architecture:** Clean Architecture (Uncle Bob's ) 
 
 ### Requirements:
 
@@ -109,11 +107,3 @@ curl -H "X-User-ID: alice" http://localhost:8080/
 * [Go `http` package](https://pkg.go.dev/net/http#ListenAndServe)
 * [curl documentation](https://curl.se/docs/manpage.html)
 
----
-
-## Notes:
-
-* Designed with **simplicity** and **clarity** for interviews.
-* The Rate Limiter demonstrates Clean Architecture principles while remaining **short and human-friendly**.
-
----
