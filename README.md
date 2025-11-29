@@ -1,6 +1,6 @@
 # Eaglepoint AI Assessment
 
-**You can find my unfiltered thought process here: [https://docs.google.com/document/d/1N0fOZS46YpvOvdr7M48pZg9axYyI7sX4BradfM1tlrA/edit?usp=sharing]
+You can find my unfiltered thought process here: [https://docs.google.com/document/d/1N0fOZS46YpvOvdr7M48pZg9axYyI7sX4BradfM1tlrA/edit?usp=sharing]
 
 This repository contains solutions for three technical assessment tasks submitted to Eaglepoint AI. This README documents the **solution approach, thought process, and implementation steps** for each task.
 
