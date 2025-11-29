@@ -5,17 +5,14 @@ import (
     "rate-limiter/entities"
 )
 
-// A simple in-memory storage (map). No interface needed.
+// In-memory storage
 var UserLimits = map[string]*entities.RateLimit{}
 
-// Allow returns true if request is allowed.
+// Check if request is allowed
 func Allow(userID string) bool {
-    limit, exists := UserLimits[userID]
-
-    if !exists {
-        // First time seeing user
+    limit, ok := UserLimits[userID]
+    if !ok {
         limit = &entities.RateLimit{
-            UserID:       userID,
             Requests:     0,
             MaxRequests:  5,
             WindowStart:  time.Now(),
@@ -24,18 +21,15 @@ func Allow(userID string) bool {
         UserLimits[userID] = limit
     }
 
-    // Reset if 60s passed
     if time.Since(limit.WindowStart) > limit.WindowLength {
         limit.Requests = 0
         limit.WindowStart = time.Now()
     }
 
-    // If limit hit → block
     if limit.Requests >= limit.MaxRequests {
         return false
     }
 
-    // Count request + allow
     limit.Requests++
     return true
 }
