@@ -1,5 +1,5 @@
 import string
-from collections import defaultdict
+
 
 class TextAnalyser:
     def __init__(self, text: str):
@@ -17,10 +17,7 @@ class TextAnalyser:
         return clean_text.split()
 
     def get_total_word_count(self):
-        words = defaultdict(int)
-        for word in self.words:
-            words[word] += 1
-        return len(words)   
+        return len(self.words)
 
     def get_average_word_length(self): # finds average word length
         if not self.words:
