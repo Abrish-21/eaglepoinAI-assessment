@@ -1,23 +1,24 @@
 import string
-
-
 class TextAnalyser:
     def __init__(self, text: str):
         self.raw_text = text
         self.words = self.clean_text(text)
 
-    def clean_text(self, text: str): # Cleans and splits the text into words
-        
+    def clean_text(self, text: str): # Cleans and splits the text into words  
         if not text:
             return []
         lower_text = text.lower()
+        #python library to transform string
+        # using a translation table we give it as a parametre
+        # now we are cleaning the row text to be ready for analysis
         translator = str.maketrans('', '', string.punctuation) # Remove punctuation
-        clean_text = lower_text.translate(translator)
+        clean_text = lower_text.translate(translator) 
         
         return clean_text.split()
-
+    
     def get_total_word_count(self):
         return len(self.words)
+    
 
     def get_average_word_length(self): # finds average word length
         if not self.words:
@@ -25,7 +26,7 @@ class TextAnalyser:
         total_characters = sum(len(word) for word in self.words)
         average = total_characters / len(self.words)
         return round(average, 2)
-
+    
     def get_longest_word(self) : # finds the longest word(s)
         if not self.words:
             return []
